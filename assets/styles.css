@@ -3,15 +3,20 @@ body {
   }
   
   #heading {
-    font-family: Times;
+    font-family: 'Lato', sans-serif;
     font-weight: bold;
   }
   
   #subHeading {
-    font-family: Times;
-    font-style: italic;
+    font-family: 'Lato', sans-serif;
+    /* font-style: none; */
+    font-size: 18px;
   }
   
+  #currentTime {
+    font-size: 25px;
+  }
+
   .panel-title {
     font-weight: bold;
   }
