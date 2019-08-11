@@ -14,4 +14,35 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // Create a variable to reference the database
-var database = firebase.database();
+const database = firebase.database();
+
+// DECLARATION START (variables, functions, etc.) ---------------------
+var trainName = "";
+var destination = "";
+var startTime = "";
+var frequency = 0;
+
+// LOCAL TIME FUNCTION
+function currentTime() {
+  var current = moment().format('LT');
+  $("#currentTime").html(current);
+  setTimeout(currentTime, 1000);
+};
+
+// FORM FUNCTION
+$(".form-field").on("keyup", function() {
+  var traintemp = $("#train-name").val().trim();
+  var citytemp = $("#destination").val().trim();
+  var timetemp = $("#first-train").val().trim();
+  var freqtemp = $("#frequency").val().trim();
+
+  sessionStorage.setItem("train", traintemp);
+  sessionStorage.setItem("city", citytemp);
+  sessionStorage.setItem("time", timetemp);
+  sessionStorage.setItem("freq", freqtemp);
+});
+
+$("#train-name").val(sessionStorage.getItem("train"));
+$("#destination").val(sessionStorage.getItem("city"));
+$("#first-train").val(sessionStorage.getItem("time"));
+$("#frequency").val(sessionStorage.getItem("freq"));
