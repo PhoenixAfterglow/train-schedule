@@ -27,6 +27,11 @@ body {
     font-weight: bold;
   }
   
+  #submit {
+    color: white;
+    background-color: #04507c;
+  }
+
   th {
     font-weight: bold;
   }
